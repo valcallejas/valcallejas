@@ -1,16 +1,32 @@
 ## Hi there 👋
 
-<!--
-**valcallejas/valcallejas** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+👤 Nombre: Val
+🎯 Rol: Analista y Desarrollador de Software Fullstack
+🗣 Idiomas: Español (nativo), Inglés (nivel técnico, lo suficiente para discutir bugs con dignidad)
 
-Here are some ideas to get you started:
++ ⚙️ HTML5 / CSS3
++ 🧠 JavaScript (ES6+)
++ 🧩 PHP 
++ 🐘 Laravel 
++ 🔁 Programación Orientada a Objetos (POO)
++ 🐍 Python 
++ 🌐 Django 
++ 🗃️ Bases de Datos SQL (MySQL)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+🛠️ Herramientas y Extras:
+🧰 GitHub 
+🎨 Bootstrap + CSS personalizado
+🔍 MySQL Workbench, phpMyAdmin
+⚙️ XAMPP, VS Code 
+
+📈 Soft Skills:
+🤹‍♂️ Multitasking sin perder el control (ni el café ☕)
+🧩 Pensamiento lógico 
+😄 Comunicación clara
+🔍 Atención al detalle 
+
+📫 Contacto:
+✉️ Email: valery12callejas@gmail.com
+
+
+

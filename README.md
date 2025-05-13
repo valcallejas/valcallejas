@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-👤 Nombre: Val
+👤 Nombre: Valery Callejas Alvarez
 🎯 Rol: Analista y Desarrollador de Software Fullstack
 🗣 Idiomas: Español (nativo), Inglés (nivel técnico, lo suficiente para discutir bugs con dignidad)
 

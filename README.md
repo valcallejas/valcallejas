@@ -4,8 +4,8 @@
 🎯 Rol: Analista y Desarrollador de Software Fullstack
 🗣 Idiomas: Español (nativo), Inglés (nivel técnico, lo suficiente para discutir bugs con dignidad)
 
-+ ⚙️ HTML5 / CSS3
-+ 🧠 JavaScript (ES6+)
++ ⚙️ HTML5 / CSS
++ 🧠 JavaScript 
 + 🧩 PHP 
 + 🐘 Laravel 
 + 🔁 Programación Orientada a Objetos (POO)

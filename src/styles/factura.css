@@ -1,0 +1,387 @@
+/* ============ CONTENEDOR PRINCIPAL ============ */
+.factura-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+/* ============ FACTURA GENERAL ============ */
+.factura {
+  width: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #5d3b8c;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(93, 59, 140, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============ CONTENIDO DE FACTURA ============ */
+.factura-contenido {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  color: #333;
+}
+
+/* Título principal */
+.titulo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5d3b8c;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ============ LISTA DE PRODUCTOS ============ */
+.productos-lista {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.producto-item {
+  background: rgba(255, 255, 255, 0.6);
+  border-left: 5px solid #c084fc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.producto-nombre {
+  font-weight: bold;
+  color: #5d3b8c;
+  margin-bottom: 4px;
+}
+
+.producto-detalle {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Total a pagar */
+.total {
+  text-align: right;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  color: #000;
+}
+
+/* ============ BOTONES ============ */
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.boton-descargar {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-descargar:hover {
+  background-color: #6b21a8;
+}
+
+.boton-comprar {
+  background-color: #ec4899;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.boton-comprar:hover {
+  background-color: #db2777;
+}
+
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(90, 45, 125, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-image: url("../assets/img/factura2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  color: #5a2d7d;
+  position: relative;
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modal h2 {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #3c0753;
+  font-weight: bold;
+}
+
+.modal label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #3c0753;
+  text-align: center;
+}
+
+/* Campos de entrada */
+.modal input,
+.modal select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border-radius: 12px;
+  border: 2px solid #e3c8ff;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #3c0753;
+}
+
+/* Botones del modal */
+.modal-botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.modal-botones button {
+  flex: 1;
+  min-width: 130px;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #c084fc;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.modal-botones button:hover {
+  background-color: #9c27b0;
+}
+
+.modal-imagen {
+  width: 120px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+/* ============ MENSAJE DE COMPRA ============ */
+.mensaje-exito {
+  margin-top: 20px;
+  background-color: #e1bee7;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: #4a148c;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ============ MENSAJE DE ÉXITO ============ */
+
+.mensaje-exito {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4a004a;
+  color: #e7bae7;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 0 15px #fff;
+  z-index: 9999;
+  animation: aparecerDesaparecer 3s ease-in-out;
+}
+
+/* Animación opcional */
+@keyframes aparecerDesaparecer {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+.mensaje-error {
+  color: #b91c1c;
+  font-size: 0.85rem;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 768px) {
+  .factura-container {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .factura {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .factura-contenido {
+    padding: 16px;
+  }
+
+  .producto-item {
+    padding: 8px;
+  }
+
+  .producto-detalle {
+    font-size: 13px;
+  }
+
+  .total {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .botones {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .boton-comprar,
+  .boton-descargar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .modal h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal label {
+    font-size: 0.9rem;
+  }
+
+  .modal input,
+  .modal select {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  .modal-botones {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-botones button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .factura {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .factura-contenido {
+    padding: 12px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+
+  .producto-detalle {
+    font-size: 12px;
+  }
+
+  .total {
+    font-size: 14px;
+  }
+
+  .modal {
+    padding: 1rem;
+  }
+
+  .modal h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal label {
+    font-size: 0.85rem;
+  }
+
+  .modal input,
+  .modal select {
+    font-size: 0.9rem;
+  }
+
+  .mensaje-exito {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}

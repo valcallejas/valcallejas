@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Datos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #001829;
+      cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" stroke-linejoin="round" d="m12 3 2.23 6.88h7.23l-5.85 4.24L17.85 21 12 16.75 6.15 21l2.24-6.88-5.85-4.24h7.23L12 3z"/></svg>'), auto;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    svg#visual {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Gestión de Datos</h2>
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="number" id="edad" placeholder="Edad">
+    <button onclick="agregarDato()">Guardar</button>
+    <button onclick="exportarExcel()">Exportar a Excel</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Fondo SVG de estrellas -->
+  <svg id="visual" viewBox="0 0 675 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <rect x="0" y="0" width="675" height="900" fill="#001829"></rect>
+    <g fill="none" stroke="#297EA6" stroke-width="9">
+      <path d="M0 -109.5L24.6 -33.8L104.1 -33.8L39.8 12.9L64.4 88.6L0 41.8L-64.4 88.6L-39.8 12.9L-104.1 -33.8L-24.6 -33.8Z" transform="translate(174 154)"/>
+      <path d="M0 -41.5L9.3 -12.8L39.5 -12.8L15.1 4.9L24.4 33.6L0 15.9L-24.4 33.6L-15.1 4.9L-39.5 -12.8L-9.3 -12.8Z" transform="translate(350 652)"/>
+      <path d="M0 -65.1L14.6 -20.1L61.9 -20.1L23.7 7.7L38.3 52.7L0 24.9L-38.3 52.7L-23.7 7.7L-61.9 -20.1L-14.6 -20.1Z" transform="translate(569 330)"/>
+      <path d="M0 -94.4L21.2 -29.2L89.8 -29.2L34.3 11.1L55.5 76.4L0 36.1L-55.5 76.4L-34.3 11.1L-89.8 -29.2L-21.2 -29.2Z" transform="translate(541 88)"/>
+      <path d="M0 -103.8L23.3 -32.1L98.7 -32.1L37.7 12.3L61 84L0 39.7L-61 84L-37.7 12.3L-98.7 -32.1L-23.3 -32.1Z" transform="translate(633 714)"/>
+      <path d="M0 -72.7L16.3 -22.5L69.1 -22.5L26.4 8.6L42.7 58.8L0 27.8L-42.7 58.8L-26.4 8.6L-69.1 -22.5L-16.3 -22.5Z" transform="translate(314 398)"/>
+      <path d="M0 -45.3L10.2 -14L43.1 -14L16.5 5.3L26.6 36.7L0 17.3L-26.6 36.7L-16.5 5.3L-43.1 -14L-10.2 -14Z" transform="translate(80 663)"/>
+    </g>
+  </svg>
+
+  <!-- SheetJS para exportar a Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <script>
+    let datos = JSON.parse(localStorage.getItem('datos')) || [];
+
+    function renderizarTabla() {
+      const tbody = document.getElementById("tabla-body");
+      tbody.innerHTML = "";
+      datos.forEach((dato, index) => {
+        const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${dato.nombre}</td>
+            <td>${dato.edad}</td>
+            <td><button class="delete-btn" onclick="eliminar(${index})">Eliminar</button></td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      });
+    }
+
+    function agregarDato() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const edad = document.getElementById("edad").value.trim();
+      if (nombre && edad) {
+        datos.push({ nombre, edad });
+        localStorage.setItem("datos", JSON.stringify(datos));
+        renderizarTabla();
+        document.getElementById("nombre").value = "";
+        document.getElementById("edad").value = "";
+      }
+    }
+
+    function eliminar(index) {
+      datos.splice(index, 1);
+      localStorage.setItem("datos", JSON.stringify(datos));
+      renderizarTabla();
+    }
+
+    function exportarExcel() {
+      const ws = XLSX.utils.json_to_sheet(datos.map((d, i) => ({ ID: i + 1, Nombre: d.nombre, Edad: d.edad })));
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Datos");
+      XLSX.writeFile(wb, "datos.xlsx");
+    }
+
+    renderizarTabla();
+  </script>
+</body>
+</html>

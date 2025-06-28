@@ -1,12 +1,32 @@
-# React + Vite
+## Hi there 👋
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+👤 Nombre: Valery Callejas Alvarez
+🎯 Rol: Analista y Desarrollador de Software Fullstack
+🗣 Idiomas: Español (nativo), Inglés (nivel técnico, lo suficiente para discutir bugs con dignidad)
 
-Currently, two official plugins are available:
++ ⚙️ HTML5 / CSS
++ 🧠 JavaScript 
++ 🧩 PHP 
++ 🐘 Laravel 
++ 🔁 Programación Orientada a Objetos (POO)
++ 🐍 Python 
++ 🌐 Django 
++ 🗃️ Bases de Datos SQL (MySQL)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Herramientas y Extras:
+🧰 GitHub 
+🎨 Bootstrap + CSS personalizado
+🔍 MySQL Workbench, phpMyAdmin
+⚙️ XAMPP, VS Code 
 
-## Expanding the ESLint configuration
+📈 Soft Skills:
+🤹‍♂️ Multitasking sin perder el control (ni el café ☕)
+🧩 Pensamiento lógico 
+😄 Comunicación clara
+🔍 Atención al detalle 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📫 Contacto:
+✉️ Email: valery12callejas@gmail.com
+
+
+
